@@ -63,6 +63,8 @@ Start a Kubernetes cluster. Go into the `udacity-c3-deployment/k8s` directory an
    kubectl port-forward deployment/reverseproxy 8080:8080 
    ```
 
+1. Navigate to `localhost:8100` to run the application.
+
 ### Note for Udacity reviewer
 
 The `k8s-screenshots` directory contains screenshots that prove the following:
@@ -70,3 +72,5 @@ The `k8s-screenshots` directory contains screenshots that prove the following:
 * The application has been deployed with `kubectl` (`pods_running.png`)
 * Cluster logging is enabled (`cluster_logging_enabled.png`)
 * Application logs are enabld (`applicative_logs.png`, `applicative_log_example.png`)
+
+Docker images can be found here: https://hub.docker.com/u/pierreedouardchaix
