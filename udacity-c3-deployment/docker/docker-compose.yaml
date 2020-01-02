@@ -1,9 +1,6 @@
 version: "3"
 services:
   reverseproxy:
-    build:
-      context: .
-      dockerfile: Dockerfile
     image: udacity-c3-reverseproxy
     ports:
         - 8080:8080
@@ -12,9 +9,6 @@ services:
       - backend-user
       - backend-feed     
   backend-user:
-    build:
-      context: ../../udacity-c3-restapi-user/
-      dockerfile: Dockerfile
     image: udacity-c3-restapi-user
     environment:
       UDACITY_CLOUDDEVELOPER_RDS_USERNAME: $UDACITY_CLOUDDEVELOPER_RDS_USERNAME
@@ -27,9 +21,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   backend-feed:
-    build:
-      context: ../../udacity-c3-restapi-feed/
-      dockerfile: Dockerfile
     image: udacity-c3-restapi-feed
     volumes:
       - $HOME/.aws:/root/.aws
@@ -44,9 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    build:
-      context: ../../udacity-c3-frontend/
-      dockerfile: Dockerfile
     image: udacity-c3-frontend
     ports:
       - "8100:80"
